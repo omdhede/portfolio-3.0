@@ -4,15 +4,15 @@ import React from 'react';
 
 import {useState} from 'react';
 import About from "../components/about"
-import Resume from "../components/resume";
 import Projects from "../components/projects";
 import Certifications from "../components/certifications";
 import Contact from "../components/contact";
+import Skills from "../components/skills";
 
 export default function Content() {
     const [activeSection, setActiveSection] = useState('Projects');
 
-    const sections = [ 'Projects', 'Resume', 'Certifications', 'About Me', 'Contact'];
+    const sections = ['Projects', 'Skills', 'Certifications', 'About Me', 'Contact'];
 
     return (
         <div
@@ -39,7 +39,8 @@ export default function Content() {
                     </nav>
                 </div>
             </section>
-            <div className=' overflow-x-scroll scrollbar-track-gray-800 scrollbar-thumb-gray-400 scrollbar-thin scrollbar-thumb-rounded-3xl scrollbar-track-rounded-3xl mx-6 '>
+            <div
+                className=' overflow-x-scroll scrollbar-thumb-gray-400 scrollbar-thin scrollbar-thumb-rounded-3xl scrollbar-track-rounded-3xl mx-6 '>
                 <div className='w-[100rem] flex flex-row'>
                     {activeSection === 'Projects' && <Projects/>}
                 </div>
@@ -47,7 +48,9 @@ export default function Content() {
             <div className='relative my-6 '>
                 {activeSection === 'About Me' && <About/>}
             </div>
-            {activeSection === 'Resume' && <Resume/>}
+
+            {activeSection === 'Skills' && <Skills/>}
+
             {activeSection === 'Certifications' && <Certifications/>}
             {activeSection === 'Contact' && <Contact/>}
         </div>

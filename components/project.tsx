@@ -19,7 +19,7 @@ export default function Project({title, description, link, image, tags}: Project
                             <Image src={image} alt='' className='rounded-xl border-4 border-gray-700 ' width="400"/>
                         </div>
 
-                        <div className='flex flex-col  my-6'>
+                        <div className='flex flex-col my-6'>
                             <p className='text-2xl font-semibold my-2'>
                                 {title}
                             </p>
